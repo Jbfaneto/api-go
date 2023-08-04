@@ -9,6 +9,7 @@ import (
 	"github.com/Jbfaneto/api-go/models"
 )
 
+// Create is a function to create a new todo it receives a http.ResponseWriter and a http.Request and returns nothing
 func Create(w http.ResponseWriter, r *http.Request) {
 	var todo models.Todo
 
@@ -34,6 +35,7 @@ func Create(w http.ResponseWriter, r *http.Request) {
 			"Message": fmt.Sprintf("Todo inserted with success! ID: %d", id),
 		}
 	}
+	// set the header to application/json
 	w.Header().Add("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)
 }

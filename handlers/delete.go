@@ -11,6 +11,7 @@ import (
 	"github.com/go-chi/chi/v5"
 )
 
+// Delete is a function to delete a todo it receives a http.ResponseWriter and a http.Request and returns nothing
 func Delete(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(chi.URLParam(r, "id"))
 	if err != nil {
@@ -34,7 +35,7 @@ func Delete(w http.ResponseWriter, r *http.Request) {
 		"Error":   false,
 		"Message": fmt.Sprintf("Todo removido com sucesso! ID: %d", id),
 	}
-
+	// set the header to application/json
 	w.Header().Add("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)
 }

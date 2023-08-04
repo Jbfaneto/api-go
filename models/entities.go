@@ -1,5 +1,6 @@
 package models
 
+// Todo is a struct to represent a todo
 type Todo struct {
 	ID          int64  `json:"id"`
 	Title       string `json:"title"`

@@ -2,6 +2,7 @@ package models
 
 import "github.com/Jbfaneto/api-go/db"
 
+// Delete is a function to delete a todo it receives a id and returns a int64 and a error
 func Delete(id int64) (int64, error) {
 	conn, err := db.OpenConnection()
 	if err != nil {
@@ -13,6 +14,6 @@ func Delete(id int64) (int64, error) {
 	if err != nil {
 		return 0, err
 	}
-
+	// returns the number of rows affected
 	return res.RowsAffected()
 }

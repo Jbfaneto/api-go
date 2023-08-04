@@ -4,6 +4,7 @@ import (
 	"github.com/Jbfaneto/api-go/db"
 )
 
+// Insert is a function to insert a todo it receives a Todo and returns an int64 and an error
 func Insert(todo Todo) (id int64, err error) {
 	conn, err := db.OpenConnection()
 	if err != nil {

@@ -8,6 +8,7 @@ import (
 	_ "github.com/lib/pq"
 )
 
+// function to open connection with database
 func OpenConnection() (*sql.DB, error) {
 	conf := configs.GetDB()
 
@@ -20,6 +21,6 @@ func OpenConnection() (*sql.DB, error) {
 	}
 
 	err = conn.Ping()
-
+	//it returns the connection to the pool or the error
 	return conn, err
 }

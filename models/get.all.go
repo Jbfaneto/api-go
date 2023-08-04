@@ -2,6 +2,7 @@ package models
 
 import "github.com/Jbfaneto/api-go/db"
 
+// GetAll is a function to get all todos it receives nothing and returns a slice of Todo and an error
 func GetAll() (todos []Todo, err error) {
 	conn, err := db.OpenConnection()
 	if err != nil {

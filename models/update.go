@@ -2,6 +2,7 @@ package models
 
 import "github.com/Jbfaneto/api-go/db"
 
+// Update is a function to update a todo it receives an id and a Todo and returns an int64 and an error
 func Update(id int64, todo Todo) (int64, error) {
 	conn, err := db.OpenConnection()
 	if err != nil {
